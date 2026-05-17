@@ -1,46 +1,44 @@
-<div align="center">
+# Ayoub Playground 🎮
 
-# Ayoub Playground
+Live HTML/CSS/JS code editor with AI assistant — preview instantly, get help from OpenRouter AI.
 
-<img src="https://ik.imagekit.io/imgayoub/LOGO/ayoub.pw%20logo%20many%20size/apple-touch-icon.png?updatedAt=1774898725464" alt="Ayoub Logo" width="180" />
+**Design:** Brown/Dark theme  
+**AI:** OpenRouter (free tier) — set `OPENROUTER_API_KEY` in env
 
-### A beautiful coding playground by Ayoub
+## 📂 Files
 
-</div>
+| File | Description |
+|------|-------------|
+| `worker.js` | Cloudflare Worker (ES Modules) | 
+| `index.html` | Standalone HTML — open directly in browser |
+| `README.md` | This file |
 
----
+## 🚀 Deploy to Cloudflare Workers (Dashboard)
 
-## ✨ About
+1. Go to **Workers & Pages** → Create Worker
+2. Delete default code → Paste content of `worker.js`
+3. Go to **Settings → Environment Variables** → Add:
+   - `OPENROUTER_API_KEY` — your OpenRouter API key (for AI chat)
+4. (Optional) **KV + Telegram**:
+   - Bind KV namespace `VISITORS` for visitor tracking
+   - Add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`
+5. Deploy 🎉
 
-Ayoub Playground is a modern coding workspace that lets you edit HTML, CSS, and JavaScript with a live preview.
+## 🔌 Endpoints
 
-## 🚀 Features
+| Path | Method | Description |
+|------|--------|-------------|
+| `/` | GET | Playground page |
+| `/api/chat` | POST | AI chat via OpenRouter |
+| `/visits` | GET | Visitor data (if KV bound) |
 
-- Live preview for your code.
-- Clean dark UI inspired by modern coding tools.
-- Easy file upload support.
-- Fast and simple editing experience.
-- Beautiful animations and a polished layout.
+## 🎨 Features
 
-## 🛠️ Tech Stack
+- **Live Preview** — edit HTML/CSS/JS, see result instantly
+- **Error Detection** — runtime errors in preview are caught and shown
+- **AI Assistant** — right sidebar, context-aware, with code apply buttons
+- **Download** — export project as standalone HTML file
+- **Theme Toggle** — Dark/Light mode
+- **Visitor Tracking** — Telegram + KV (optional)
 
-- HTML
-- CSS
-- JavaScript
-
-## 📸 Logo
-
-<img src="https://ik.imagekit.io/imgayoub/LOGO/ayoub.pw%20logo%20many%20size/apple-touch-icon.png?updatedAt=1774898725464" alt="Ayoub Logo" width="220" />
-
-## 🌍 From Vienna
-
-Made with love from Vienna 🇦🇹❤️✨
-
----
-
-<div align="center">
-
-**Ayoub Playground**  
-Made by Ayoub
-
-</div>
+Made with ❤️ from Vienna
